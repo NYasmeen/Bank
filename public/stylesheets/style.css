@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background-image: url("https://media.istockphoto.com/photos/pink-piggy-bank-on-a-green-background-picture-id494616658?k=6&m=494616658&s=612x612&w=0&h=hZLNQDKfZRnodhrFoHKfjiKFxbQnemAZgKpMGv6tD2M="); */
+  background-image: url("http://pavbca.com/walldb/original/7/b/5/790930.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+
+.top {
+  background-color:#353837;
+  padding : 1px;
 }
 
 a {
   color: #00B7FF;
 }
+
+
+.container{
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 20px;
+    border-radius: 10%;
+
+}
+    
+    
+    
+    
+.containers{
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10px;
+  /* border-radius: 10%; */
+
+}
+  

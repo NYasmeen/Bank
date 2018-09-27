@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- CSS        -->
+  <link rel="stylesheet" type="text/css" href='/stylesheets/style.css'>
+  <title>
+    <%= title %>
+  </title>
+
+</head>
+
+<body class="bg">
+
+
+
+
+  <nav class="navbar navbar-light bg-dark justify-content-between">
+    <a class="navbar-brand text-light">
+      <%= title %>
+    </a>
+    <form class="form-inline" action="/logout" method="GET">
+      <button type='submit' class="btn btn-outline-white my-2 my-sm-0 mx-2" type="button">Logout</button>
+    </form>
+  </nav>
+  <!-- <div class="col-md-6 container">
+          <h1>User Info</h1>
+          <h4>Account no.</h4>
+          <h4>Username : Yasmeen</h4>
+          <h4>Email :Yasmeen@gmail.com</h4>
+          
+          </div> -->
+  <div>
+    <div class="row">
+      <div class="containers col text-center">
+        <h4>Account summary
+          </h4>
+            <p class="display-4">
+              <strong>Rs:</strong> <%= JSON.stringify(Info.account);  %>
+              <p>
+      </div>
+      <div class="containers col">
+        <div class="row ">
+          <div class="col-md-4 ">
+
+           <h4>Name</h4> 
+          </div>
+          <div class="col ">
+
+
+            :       <%= JSON.stringify(Info.name);  %>
+
+          </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-4 ">
+
+            <h4>Email</h4>
+          </div>
+          <div class="col ">
+            :      <%= JSON.stringify(Info.email);  %>
+
+          </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-4 ">
+               <h4>Phone Number</h4> 
+          </div>
+          <div class="col">
+            :       <%= JSON.stringify(Info.phonenumber);  %>
+
+          </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-4 ">
+               <h4> Address</h4>
+          </div>
+          <div class="col">
+            :       <%= JSON.stringify(Info.address);  %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="containers ">
+        <form class="form-inline" action="/logout" method="GET">
+          <button type='submit' class="btn btn-outline-dark my-2 my-sm-0 mx-2" type="button">Withdraw/Deposit</button>
+   </form>
+   <hr>
+   <div>
+      Transaction history
+   </div>
+         
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
