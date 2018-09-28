@@ -11,14 +11,29 @@ router.post('/register', function(req, res) {
   sess = req.session;
   var db = req.db;
   var collection = db.get('user');
-  console.log(collection);
-
-  collection.insert(req.body, function(err, result){
-    res.send((err === null) ? { msg: 'Success' } : { msg:'error: ' + err });
+  let email = req.body.email;
+  sess.email=req.body.email;
+  db.collection('user').findOne({ email }, (err, result) => {
+    if(result){
+      res.redirect('/error');
+    }else{
     
-  });
- 
-});
+      collection.insert(req.body, function(err, result){
+        if (err) throw err;
+          db.close();
+         });
+         res.redirect('/home');
+      }
+      });
+      
+    });
+
+
+
+
+
+
+
 
 router.post('/login', function(req, res) {
   sess = req.session;

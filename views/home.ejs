@@ -7,15 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"> -->
   <!-- CSS        -->
   <link rel="stylesheet" type="text/css" href='/stylesheets/style.css'>
   <title>
     <%= title %>
   </title>
 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+
 
 <body class="bg">
 
@@ -41,65 +47,136 @@
     <div class="row">
       <div class="containers col text-center">
         <h4>Account summary
-          </h4>
-            <p class="display-4">
-              <strong>Rs:</strong> <%= JSON.stringify(Info.account);  %>
-              <p>
+        </h4>
+        <p class="display-4">
+          <strong>Rs:</strong>
+          <%= JSON.stringify(Info.account);  %>
+            <p>
       </div>
       <div class="containers col">
         <div class="row ">
           <div class="col-md-4 ">
 
-           <h4>Name</h4> 
+            <h4>Name</h4>
           </div>
           <div class="col ">
 
 
-            :       <%= JSON.stringify(Info.name);  %>
+            :
+            <%= JSON.stringify(Info.name);  %>
 
           </div>
         </div>
         <div class="row ">
-            <div class="col-md-4 ">
+          <div class="col-md-4 ">
 
             <h4>Email</h4>
           </div>
           <div class="col ">
-            :      <%= JSON.stringify(Info.email);  %>
+            :
+            <%= JSON.stringify(Info.email);  %>
 
           </div>
         </div>
         <div class="row ">
-            <div class="col-md-4 ">
-               <h4>Phone Number</h4> 
+          <div class="col-md-4 ">
+            <h4>Phone Number</h4>
           </div>
           <div class="col">
-            :       <%= JSON.stringify(Info.phonenumber);  %>
+            :
+            <%= JSON.stringify(Info.phonenumber);  %>
 
           </div>
         </div>
         <div class="row ">
-            <div class="col-md-4 ">
-               <h4> Address</h4>
+          <div class="col-md-4 ">
+            <h4> Address</h4>
           </div>
           <div class="col">
-            :       <%= JSON.stringify(Info.address);  %>
+            :
+            <%= JSON.stringify(Info.address);  %>
 
           </div>
         </div>
       </div>
     </div>
     <div class="containers ">
-        <form class="form-inline" action="/logout" method="GET">
-          <button type='submit' class="btn btn-outline-dark my-2 my-sm-0 mx-2" type="button">Withdraw/Deposit</button>
-   </form>
-   <hr>
-   <div>
-      Transaction history
-   </div>
-         
+      <form class="form-inline" action="/logout" method="GET">
+        <button type='button' class="btn btn-outline-dark my-2 my-sm-0 mx-2" data-toggle="modal" data-target="#myModal">Withdraw/Deposit</button>
+
+      </form>
+      <hr>
+      <div>
+        Transaction history
+      </div>
+
     </div>
   </div>
+
+  <!-- WOD model -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registration</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="/registration" method="POST">
+            <div class="form-group">
+              <label for="Name">Name</label>
+              <input type="Name" class="form-control" id="name" placeholder="Enter Name" name="name" pattern="[A-Za-z]+" required>
+            </div>
+
+            <div class="form-group">
+              <label for="dob">DOB</label>
+              <input type="date" class="form-control" id="dob" placeholder="Enter DOB" name="dob" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-].+@touch2success.com"
+                size="30" title="Restricted only to T2S User" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" pattern="[789][0-9]{9}" required>
+            </div>
+
+            <label for="Address"> Address</label>
+            <textarea class="form-control" style="min-width: 100%" id="address" placeholder="Enter address" name="address" required>
+
+
+
+              </textarea>
+        </div>
+
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" type="submit" class="btn btn-success">Sign Up</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- /WOD model -->
+
+
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
